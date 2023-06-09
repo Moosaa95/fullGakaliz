@@ -132,3 +132,13 @@ STATICFILES_DIRS = (BASE_DIR / "frontend",)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv("EMAIL_HOST")  # Update with the appropriate SMTP server
+EMAIL_PORT = os.getenv("EMAIL_PORT")  # Update with the appropriate port number
+EMAIL_USE_TLS = True  # Set it to True if your SMTP server requires TLS
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  # Update with your email address
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # Update with your email password
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")  # Update with your email address
+SENDER_EMAIL=os.getenv("SENDER_EMAIL")
